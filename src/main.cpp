@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-const int SCREEN_WIDTH = 800;
+const int SCREEN_WIDTH  = 800;
 const int SCREEN_HEIGHT = 600;
 const char* WINDOW_NAME = "LAB #1";
 
@@ -84,6 +84,12 @@ int main(void)
 
 	while (!glfwWindowShouldClose(window))
 	{
+
+		/* Очищаем экран заливая, его фиолетовым цветом */
+		glClearColor(0.3f, 0.1f, 0.25f, 1.0f); // Устанавливаем цвет очистики
+		glClear(GL_COLOR_BUFFER_BIT);          // Очищаем Цветой буффер
+
+
 		glfwPollEvents();
 		glfwSwapBuffers(window);
 	}
