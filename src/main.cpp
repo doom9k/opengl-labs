@@ -3,22 +3,22 @@
 
 #include <iostream>
 
-const int SCREEN_WIDTH  = 800;
+const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
-const char *WINDOW_NAME = "LAB #1";
+const char* WINDOW_NAME = "LAB #1";
 
 int main(void)
 {
 	/************************
-		Инициализация GLFW 
+		Инициализация GLFW
 	*************************/
 	glfwInit();
 
 	/* Задается минимальная требуемая версия OpenGL (3.3) */
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); 
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); 
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
-	/* Установка профайла для которого создается контекст 
+	/* Установка профайла для которого создается контекст
 		Используяется CORE профиль. */
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
@@ -30,8 +30,8 @@ int main(void)
 		Создание и установка контекста для Объекта ОКНА
 	 *****************************************************/
 
-	/* Создание объекта окна, с параметрами, 
-	  (высота, ширина, название)*/
+	 /* Создание объекта окна, с параметрами,
+	   (высота, ширина, название)*/
 	GLFWwindow* window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_NAME, nullptr, nullptr);
 	if (window == nullptr) // Проверка, создалось ли окно
 	{
@@ -59,9 +59,9 @@ int main(void)
 		Настройка VIEWPORT
 	 ************************/
 
-	/* Сообщаем OpenGL - размер отрисовываемого окна */
+	 /* Сообщаем OpenGL - размер отрисовываемого окна */
 	glViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-	
+
 
 
 	/***************************
@@ -69,18 +69,18 @@ int main(void)
 	 ***************************/
 
 
-	/* glfwWindowShouldClose() :: проверяет в начале каждой
-	  итерации цикла, получил ли GLFW сигнал, к закрытия 
-	  
-	   glfwPollEvents() :: Проверяет были ли вызваны какие либо события
-     (клавиатура или мышь, например) и вызывает установленные функции
-     (указатели на callback функции)
+	 /* glfwWindowShouldClose() :: проверяет в начале каждой
+	   итерации цикла, получил ли GLFW сигнал, к закрытия
 
-       glfwSwapBuffers() :: Заменяет цветовой буфер 
-     (большой буффер, содержащий значения цвета дял каждого пикселя в окне),
-     показывает результат на экране.
-	  
-	 */
+		  glfwPollEvents() :: Проверяет были ли вызваны какие либо события
+	  (клавиатура или мышь, например) и вызывает установленные функции
+	  (указатели на callback функции)
+
+	  glfwSwapBuffers() :: Заменяет цветовой буфер
+	  (большой буффер, содержащий значения цвета дял каждого пикселя в окне),
+	  показывает результат на экране.
+
+	   */
 
 	while (!glfwWindowShouldClose(window))
 	{
@@ -88,7 +88,7 @@ int main(void)
 		glfwSwapBuffers(window);
 	}
 
-	
+
 	/* Выходим из функции, очищаем выделенные нам ресурсы. */
 	glfwTerminate();
 	return 0;
