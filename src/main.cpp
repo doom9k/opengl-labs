@@ -1,4 +1,4 @@
-#include <glad/glad.h> /* Должна подключаться перед GLFW, т.к пероопределяет типы и функции */
+#include <glad/glad.h> /* Должна подключаться перед GLFW, т.к переопределяет типы и функции */
 #include <GLFW/glfw3.h>
 
 #include <iostream>
@@ -19,7 +19,7 @@ int main(void)
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
 	/* Установка профайла для которого создается контекст
-		Используяется CORE профиль. */
+		Используется CORE профиль. */
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 	/* Выключение возможности изменения размера окна */
@@ -39,7 +39,7 @@ int main(void)
 		glfwTerminate(); // Выключение GLFW
 		return -1;
 	}
-	/* Установка контекста GLFW, для ранее созданого окна */
+	/* Установка контекста GLFW, для ранее созданного окна */
 	glfwMakeContextCurrent(window);
 
 	/*********************************
@@ -87,7 +87,7 @@ int main(void)
 
 		/* Очищаем экран заливая, его фиолетовым цветом */
 		glClearColor(0.3f, 0.1f, 0.25f, 1.0f); // Устанавливаем цвет очистики
-		glClear(GL_COLOR_BUFFER_BIT);          // Очищаем Цветой буффер
+		glClear(GL_COLOR_BUFFER_BIT);          // Очищаем Цветвой буффер
 
 
 		glfwPollEvents();
